@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: blanchedalmond;
+    margin: 0%;
+    padding: 0%;
+}
+
+.textContain{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto Mono',monospace;
+    h1{
+        position: relative;
+        font-size: 3.5rem;
+    }
+    h1::after,::before{
+        content: '';
+        position: absolute;
+    }
+    h1::before{
+        background-color: blanchedalmond;
+        left: 0rem;
+        bottom: 0;
+        right: 0;
+        top: 0;
+        animation: cursorMove 7s steps(12) forwards infinite;
+    }
+    h1::after{
+        z-index: 2;
+        background-color: black;
+        width: .2rem;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0rem;
+        animation: cursorFade 7s steps(8) forwards infinite,cursorMove 7s steps(12) forwards infinite;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes cursorMove{
+        20%{
+            left: 0%;
+        }
+
+        70%{
+            left:100%;
+        }
+        90%{
+            left: 100%;
+        }
+    }
+    
+
+    @keyframes cursorFade{
+        5%{
+            visibility: hidden;
+        }
+        10%{
+            visibility: visible;
+        }
+        15%{
+            visibility: hidden;
+        }
+        20%{
+            visibility: visible;
+        }
+        73%{
+            visibility: hidden;
+        }
+        80%{
+            visibility: visible;
+        }
+        85%{
+            visibility: hidden;
+        }
+        90%{
+            visibility: visible;
+        }
+    }
+}
